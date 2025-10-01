@@ -4,18 +4,22 @@
 if Rails.env.development?
   Client.create(
     name: "John",
-    last_name: "Doe"
+    last_name: "Doe",
+    email: "john.doe@example.com"
   )
   Provider.create(
     name: "Jane 1",
-    last_name: "Doe"
+    last_name: "Doe",
+    email: "jane.doe.1@example.com"
   )
   Provider.create(
     name: "Jane 2",
-    last_name: "Doe"
+    last_name: "Doe",
+    email: "jane.doe.2@example.com"
   )
   Provider.create(
     name: "Jane 3",
-    last_name: "Doe"
+    last_name: "Doe",
+    email: "jane.doe.3@example.com"
   )
 end
