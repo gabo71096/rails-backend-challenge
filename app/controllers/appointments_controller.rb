@@ -18,6 +18,11 @@ class AppointmentsController < ApplicationController
   # DELETE /appointments/:id
   # Bonus: cancel an appointment instead of deleting
   def destroy
-    raise NotImplementedError, "Implement appointment cancelation endpoint"
+    appointment = Appointment.active.find_by(id: params[:id])
+    if appointment&.update(cancelled: true)
+      render json: appointment, status: :ok
+    else
+      render json: { error: "Appointment not found" }, status: :not_found
+    end
   end
 end
