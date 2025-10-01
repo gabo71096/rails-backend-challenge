@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_01_151447) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_01_154747) do
   create_table "appointments", force: :cascade do |t|
     t.integer "client_id", null: false
     t.integer "provider_id", null: false
@@ -25,12 +25,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_01_151447) do
 
   create_table "availabilities", force: :cascade do |t|
     t.integer "provider_id", null: false
-    t.json "starts_at"
-    t.json "ends_at"
     t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slot_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["provider_id"], name: "index_availabilities_on_provider_id"
     t.index ["slot_id"], name: "index_availabilities_on_slot_id", unique: true
   end
